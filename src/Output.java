@@ -6,7 +6,7 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Output extends JPanel {
 
-	private static String displayPanelTitle;
+	private String displayPanelTitle;
 	private static JTextArea FileOutput;
 	
 	public Output(String myTitle) {
@@ -19,7 +19,7 @@ public class Output extends JPanel {
 				BorderFactory.createTitledBorder(displayPanelTitle),
 				BorderFactory.createEmptyBorder(1 / 4, 1 / 4, 1 / 4, 1 / 4)));
 		
-		FileOutput = new JTextArea(14, 68);
+		FileOutput = new JTextArea(19, 95);
 		JScrollPane scroll = new JScrollPane(FileOutput);
 		FileOutput.setEditable(false);
 		add(scroll);

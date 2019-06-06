@@ -16,15 +16,15 @@ public class HashAlgorithms {
 		public void produceFileHash(byte[] fileBytes, int fileSize, int multiple) {	
 			for (byte b : fileBytes) {
 					this.hash += this.hash +  b + multiple + fileSize;
-					this.hash *=  this.hash *  b *  multiple * fileSize;
+					this.hash *= this.hash *  b *  multiple * fileSize;
 				}
 		}
 		
 		@Override
 		public void produceDirHash(byte[] fileBytes, int fileSize, int multiple,  long lastModified) {
 			for (byte b : fileBytes) {
-				this.hash +=  this.hash + b + multiple + fileSize + lastModified;
-				this.hash *=  this.hash * b * multiple * fileSize * lastModified ;
+				this.hash += this.hash + b + multiple + fileSize + lastModified;
+				this.hash *= this.hash * b * multiple * fileSize * lastModified ;
 			}
 		}
 
@@ -32,7 +32,7 @@ public class HashAlgorithms {
 		public void produceDirMetaHash(int fileSize, int multiple, long lastModified) {
 			for (int i = 0; i < fileSize; i++) {
 				this.hash += this.hash + multiple + fileSize + lastModified;
-				this.hash *=  this.hash * multiple * fileSize * lastModified;
+				this.hash *= this.hash * multiple * fileSize * lastModified;
 			}
 		}
 		

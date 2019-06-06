@@ -9,34 +9,33 @@ import javax.swing.*;
  */
 public class ToolClass {
 
-	/*
-	 * Gets result from MainPanel and then sets it to a local variable setResult
-	 * simply sets the result variables from both panels to the appropriate result
-	 */
+	private static double result;
 
-	public static double setResult(double result) {
-		MeasurementPanel.measurementResult = result;
-		CurrencyPanel.currencyResult = result;
+	public static void setResult(double setResult){
+		result = setResult;
+	}
+
+	public static double getResult(){
 		return result;
 	}
 
 	/*
 	 * Just some methods to generate results
 	 */
-	public static double convertMulti(double factor, double input) {
-		return setResult(input * factor);
+	public static void convertMulti(double factor, double input) {
+		setResult(input * factor);
 	}
 
-	public static double convertDivi(double factor, double input) {
-		return setResult(input / factor);
+	public static void convertDivi(double factor, double input) {
+		setResult(input / factor);
 	}
 
-	public static double convertPlus(double factor, double input) {
-		return setResult(input + factor);
+	public static void convertPlus(double factor, double input) {
+		setResult(input + factor);
 	}
 
-	public static double convertNeg(double factor, double input) {
-		return setResult(input - factor);
+	public static void convertNeg(double factor, double input) {
+		setResult(input - factor);
 	}
 
 	/*

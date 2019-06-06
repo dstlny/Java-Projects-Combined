@@ -8,24 +8,17 @@ public class CurrencyPanel extends JPanel {
 	/*
 	 * Declaring all variables and components to be used within the GUI
 	 */
-	static JTextField currencyConversionField;
-	static JLabel currencyConversionLabel;
-	private JLabel currencyTextfieldLabel;
-	static JButton currencyConversionButton;
-	static JComboBox<String> currencyCombo;
-	static String currencyUserInputField;
+	public static JTextField currencyConversionField;
+	public static JLabel currencyConversionLabel;
+	public JLabel currencyTextfieldLabel;
+	private JButton currencyConversionButton;
+	public static JComboBox<String> currencyCombo;
+	public static String currencyUserInputField;
 	private double currencyValueToConvert;
-	static double currencyResult;
+	private double currencyResult;
 	private String currencyTitle;
 	ActionListener convertListener = new ConvertListener();
 	ActionListener ButtonListener = new ButtonListener();
-
-	/*
-	 * All factors used during conversion will be replaced with an Array come
-	 * Requirement 2
-	 */
-	static Double currencyFactor;
-	static String currencySymbol;
 
 	public CurrencyPanel(String myTitle) {
 		currencyTitle = myTitle;
@@ -135,6 +128,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -142,6 +136,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -151,6 +146,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -158,6 +154,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -167,6 +164,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -174,6 +172,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -183,6 +182,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -190,6 +190,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -199,6 +200,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -206,6 +208,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -215,6 +218,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -222,6 +226,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -231,6 +236,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -238,6 +244,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}
@@ -247,6 +254,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertMulti(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					} else {
@@ -254,6 +262,7 @@ public class CurrencyPanel extends JPanel {
 						MeasurementPanel.globalCount++;
 						MeasurementPanel.globalCountLabel.setText("Conversion Count: " + MeasurementPanel.globalCount);
 						ToolClass.convertDivi(Currencies.getFactor(), currencyValueToConvert);
+						currencyResult = ToolClass.getResult();
 						break;
 
 					}

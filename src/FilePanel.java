@@ -9,6 +9,7 @@ import javax.swing.*;
  */
 public class FilePanel extends JPanel {
 
+	private static final long serialVersionUID = -3308081560513066234L;
 	/*
 	 * Declaring all variables and components to be used within the GUI
 	 */

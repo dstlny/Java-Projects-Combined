@@ -18,21 +18,21 @@ public class MeasurementPanel extends JPanel {
 	};
 	
 	private JTextField measurementField;
-	static JLabel measurementResultLabel;
-	static JLabel globalCountLabel;
+	private JLabel measurementResultLabel;
+	public static JLabel globalCountLabel;
 	private JLabel measurementInputLabel;
-	static JButton measurementConvertButton;
-	static JButton globalClearButton;
-	static JComboBox < String > measurementCombo;
-	static JCheckBox globalReverseCalculation;
+	private JButton measurementConvertButton;
+	public static JButton globalClearButton;
+	private JComboBox < String > measurementCombo;
+	public static JCheckBox globalReverseCalculation;
 	private String measurementUserInputField;
 	private double measurementFieldValue;
-	static double measurementResult;
+	private double measurementResult;
 	private String measurementTitle;
 	ActionListener convertListener = new ConvertListener();
 	ActionListener ButtonListener = new ButtonListener();
 
-	static int globalCount = 0;
+	public static int globalCount = 0;
 
 	/*
 	 * All factors used during conversion
@@ -54,7 +54,7 @@ public class MeasurementPanel extends JPanel {
 		 * display details about number of conversions etc.
 		 */
 
-		measurementCombo = new JComboBox < String > (measurementList);
+		measurementCombo = new JComboBox <String>(measurementList);
 		measurementCombo.setBackground(Color.white);
 		measurementCombo.setOpaque(true);
 
@@ -157,12 +157,14 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							inchTOcm = 2.54;
 							ToolClass.convertMulti(inchTOcm, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// CM -> Inches
 							globalCount++;
 							inchTOcm = 2.54;
 							ToolClass.convertDivi(inchTOcm, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						}
 					case 1:
@@ -171,12 +173,14 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							milesTOkilometres = 1.609344;
 							ToolClass.convertMulti(milesTOkilometres, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// Kilometres -> Miles
 							globalCount++;
 							milesTOkilometres = 1.609344;
 							ToolClass.convertDivi(milesTOkilometres, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						}
 					case 2:
@@ -185,12 +189,14 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							poundsTOkilograms = 0.4535;
 							ToolClass.convertMulti(poundsTOkilograms, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// Kilogrammes -> Pounds
 							globalCount++;
 							poundsTOkilograms = 0.4535;
 							ToolClass.convertDivi(poundsTOkilograms, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						}
 					case 3:
@@ -199,6 +205,7 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							gallonsTOlitres = 0.21997;
 							ToolClass.convertDivi(gallonsTOlitres, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// Litres -> Gallons
@@ -213,12 +220,14 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							feetTOmetres = 0.3048;
 							ToolClass.convertMulti(feetTOmetres, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// Metres -> Feet
 							globalCount++;
 							feetTOmetres = 0.3048;
 							ToolClass.convertDivi(feetTOmetres, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						}
 					case 5:
@@ -227,12 +236,14 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							celsiusTOkelvin = 273.15;
 							ToolClass.convertPlus(celsiusTOkelvin, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// Kelvin -> Celsius
 							globalCount++;
 							celsiusTOkelvin = 273.15;
 							ToolClass.convertNeg(celsiusTOkelvin, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						}
 					case 6:
@@ -241,12 +252,14 @@ public class MeasurementPanel extends JPanel {
 							globalCount++;
 							acresTOhectares = 0.404685642;
 							ToolClass.convertMulti(acresTOhectares, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						} else {
 							// Hectares -> Acres
 							globalCount++;
 							acresTOhectares = 0.404685642;
 							ToolClass.convertDivi(acresTOhectares, measurementFieldValue);
+							measurementResult = ToolClass.getResult();
 							break;
 						}
 				}

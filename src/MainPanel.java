@@ -6,6 +6,7 @@ import java.util.*;
 
 public class MainPanel extends JPanel{
 	
+	private static final long serialVersionUID = 1L;
 	private JPanel mainPanel;
 	private MeasurementPanel measurementPanel;
 	private CurrencyPanel currencyPanel;
@@ -15,19 +16,19 @@ public class MainPanel extends JPanel{
 
 	private JMenuItem menuBarSubMenu1Item2;
 	private ImageIcon menu1ExitIcon, menu2AboutIcon, menu1ImportFileIcon;
-	static String[] importCurrencyArray;
-	static Double[] importFactorArray;
-	static String[] importSymbolArray;
-	static String[] currencyNamesArray;
-	static String nextFileLine;
-	static int i;
-	static int globalErrorCount;
-	static File importedFile;
-	static int userFileChoice;
-	static BufferedReader fileContentReader;
-	static boolean importOptionChosen = false;
-	static JFileChooser fileChooser = new JFileChooser("src");
-	static String[] importedLinesArray;
+	private static String[] importCurrencyArray;
+	private static Double[] importFactorArray;
+	private static String[] importSymbolArray;
+	private static String[] currencyNamesArray;
+	private static String nextFileLine;
+	private static int i;
+	public static int globalErrorCount;
+	private static File importedFile;
+	private int userFileChoice;
+	private static BufferedReader fileContentReader;
+	private static boolean importOptionChosen = false;
+	private static JFileChooser fileChooser = new JFileChooser("src");
+	private static String[] importedLinesArray;
 	private String importedFilePath, importedFileName;
 	private int optionChoice, algorithmChoice;
 
@@ -208,7 +209,7 @@ public class MainPanel extends JPanel{
 
 		try {
 			if (!importOptionChosen) {
-				fileContentReader = new BufferedReader(new FileReader("Java\\ApplicationProgramming\\Converter\\src\\currency.txt"));
+				fileContentReader = new BufferedReader(new FileReader("src\\currency.txt"));
 			} else {
 				fileContentReader = new BufferedReader(new FileReader(importedFile));
 			}
@@ -293,23 +294,20 @@ public class MainPanel extends JPanel{
 		} catch (FileNotFoundException e) {
 			ToolClass.incorrectFilePathDialog();
 		} catch (IOException e) {
-			ToolClass.incorrectFilePathDialog();	
+			ToolClass.exceptionIO();	
 		}
 
 	}
 
 	public static void main(String[] args) {
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
+		javax.swing.SwingUtilities.invokeLater(() -> {
 
-				/*
-				 * calling setupAndDrawConverter() as well as importFile() - two methods of
-				 * which are aptly named
-				 */
-				importFile();
-				setupAndDrawConverter();
-			}
+			/*
+			 * calling setupAndDrawConverter() as well as importFile() - two methods of
+			 * which are aptly named
+			 */
+			importFile();
+			setupAndDrawConverter();
 		});
 	}
 }

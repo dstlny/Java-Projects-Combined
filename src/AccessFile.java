@@ -57,7 +57,6 @@ public class AccessFile implements PublicInterfaces.FileAccessInterface {
 	public void multipleFiles(String inName, String inDirectory, int inChoice2) throws IOException {
 		
 		 importedFile = new File(inDirectory);
-		 Path path = Paths.get(inDirectory);
 		 directoryFileList = importedFile.listFiles();
 
 		   if (directoryFileList != null) {

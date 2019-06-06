@@ -1,11 +1,11 @@
 public class Currencies {
 
-	static String[] currencyName = new String[8];
-	static Double[] currencyFactor = new Double[8];
-	static String[] currencySymbol = new String[8];
-	static int i = 0;
-	static int j = 0;
-	static int k = 0;
+	public static String[] currencyName = new String[8];
+	public static Double[] currencyFactor = new Double[8];
+	public static String[] currencySymbol = new String[8];
+	public static int i = 0;
+	public static int j = 0;
+	public static int k = 0;
 
 	/*
 	 * Method simply dumps all Strings which are passed as 
