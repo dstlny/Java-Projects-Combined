@@ -1,7 +1,6 @@
-<Mon Jun 10 15:57:37 BST 2019 : [ERROR_LEVEL : BAD]> @ FilePanel.java:148 : [Ljava.lang.Exception;@44a43783
-<Mon Jun 10 15:59:26 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : [Ljava.lang.Exception;@2d6eeca5
-<Mon Jun 10 15:59:26 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:282 : [Ljava.lang.Exception;@7481f217
-<Mon Jun 10 15:59:26 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : [Ljava.lang.Exception;@2ed9fe6
-<Mon Jun 10 16:04:11 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : [Ljava.lang.Exception;@2f207645
-<Mon Jun 10 16:04:11 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:282 : [Ljava.lang.Exception;@321030e9
-<Mon Jun 10 16:04:11 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : [Ljava.lang.Exception;@1a0def19
+<Mon Jun 10 16:25:05 BST 2019 [ERROR_LEVEL : BAD]> @ MainPanel.java:150 : User has cancelled file selection.
+<Mon Jun 10 16:25:05 BST 2019 [ERROR_LEVEL : BAD]> @ MeasurementPanel.java:146 : java.lang.NumberFormatException: empty String
+<Mon Jun 10 16:25:05 BST 2019 [ERROR_LEVEL : BAD]> @ CurrencyPanel.java:292 : java.lang.NumberFormatException: empty String
+<Mon Jun 10 16:25:05 BST 2019 [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : Unable to import line due to corruption:[Ljava.lang.String;@70efbf98
+<Mon Jun 10 16:25:05 BST 2019 [ERROR_LEVEL : MINOR]> @ MainPanel.java:282 : Unable to import currency factor
+<Mon Jun 10 16:25:05 BST 2019 [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : Unable to import line due to corruption:[Ljava.lang.String;@69f738ca

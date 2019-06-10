@@ -240,7 +240,7 @@ public class MainPanel extends JPanel{
 				if (importedLinesArray.length != 4) {
 					globalErrorCount++;
 					ToolClass.lineCorruptDialog();
-					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 242, "Unable to import line due to corruption:" + importedLinesArray.toString());
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 242, "Unable to import line due to corruption");
 					continue;
 				}
 
