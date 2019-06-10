@@ -20,6 +20,7 @@ public class AccessFile implements PublicInterfaces.FileAccessInterface {
 	private long importedFileLastModified;
 	private int importedFileSize;
 	private int largestPrimeInINTLiteral = 214748357; //Largest prime number which will fit into aINT literal.
+	private static Date now = new Date();
 
 	/**
 	 * End of variables used.
@@ -40,8 +41,10 @@ public class AccessFile implements PublicInterfaces.FileAccessInterface {
 			fileContents = readFileContent(inDirectory);
 		} catch (FileSystemException e) {
 			ToolClass.fileSystemError();
+			ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 43, e.toString());
 		} catch (IOException e) {
 			ToolClass.exceptionIO();
+			ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 46, e.toString());
 		} finally {
 			
 			algorithmSelect(inChoice2);
@@ -75,8 +78,10 @@ public class AccessFile implements PublicInterfaces.FileAccessInterface {
 								fileContents = readFileContent(importedFilePath);
 							} catch(FileSystemException e) {
 								ToolClass.fileSystemError();
+								ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 80,  e.toString());
 							} catch (IOException e) {
 								ToolClass.exceptionIO();
+								ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 83,  e.toString());
 							} finally {
 								algorithmSelect(inChoice2);
 								this.hashGen.produceDirHash(fileContents, importedFileSize, largestPrimeInINTLiteral, importedFileLastModified);
@@ -154,6 +159,7 @@ class OpenAndWriteFile  implements PublicInterfaces.WriteToDisk {
 	private String Hash;
 	private File file = new File("");
 	private String fullFormattedStored;
+	private static Date now = new Date();
 
 	public OpenAndWriteFile(String fileToScan, String directory, String fileName, int hashFunction, long Hash, int inspectionSelect) throws IOException {
 		String fullFormatted = directory + " : " + fileName + " : " + hashFunction + " : " + inspectionSelect  + " : " + Hash;
@@ -189,9 +195,11 @@ class OpenAndWriteFile  implements PublicInterfaces.WriteToDisk {
 							WriteFile("Final.txt");
 						} else {
 							System.out.println("Unsucessfuly renamed " + file.getName() + " to " +finalName.getName());
+							ToolClass.logError(now, ToolClass.ERROR.MINOR, "AccessFile.java", 196, "Unsucessfuly renamed " + file.getName() + " to " +finalName.getName());
 						}
 					} else {
 						System.out.println("Unsucessfuly deleted " +finalName.getName());
+						ToolClass.logError(now, ToolClass.ERROR.MINOR, "AccessFile.java", 200, "Unsucessfuly deleted " +finalName.getName());
 					}
 					
 				}
@@ -211,6 +219,7 @@ class OpenAndWriteFile  implements PublicInterfaces.WriteToDisk {
 					}
 				} catch (Exception e) {
 					System.out.println("Error occurred");
+					ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 220,  e.getMessage());
 				}
 					
 				/**
@@ -324,6 +333,7 @@ class OpenAndWriteFile  implements PublicInterfaces.WriteToDisk {
 				System.out.println("Sucessfuly renamed " + file.getName() + " to " +newFileName.getName());
 			} else {
 				System.out.println("Unsucessfuly renamed " + file.getName() + " to " +newFileName.getName());
+				ToolClass.logError(now,ToolClass.ERROR.MINOR, "AccessFile.java", 334, "Unsucessfuly renamed " + file.getName() + " to " +newFileName.getName());
 			}
 		} finally {
 			WriteFile("Final.txt");
@@ -347,8 +357,10 @@ class OpenAndWriteFile  implements PublicInterfaces.WriteToDisk {
 			 writeFinal.close();
 	 } catch (FileNotFoundException e) {
 			ToolClass.fileNotFound(fileToScan);
+			ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 358, "Error trying to locate file " + fileToScan);
 	 } catch (IOException e) {
 			ToolClass.exceptionIO();
+			ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 361, "Error trying to access file " + fileToScan);
 	 } finally {
 		   if(tamperedList.size() > 0) {
 				ToolClass.FilePossiblyTampered(tamperedList, tamperedName);

@@ -1,0 +1,13 @@
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : currency2.txt : 3 : 3 : 5593481660211428126
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : Output.java : 3 : 3 : 4895900275741220039
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : FilePanel.java : 3 : 3 : 7211016316857534732
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : currency.txt : 3 : 3 : 4591566686574171210
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : HashAlgorithms.java : 3 : 3 : 7976284888174689333
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : currency_invalid.txt : 3 : 3 : 9080873691149048445
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : MeasurementPanel.java : 3 : 3 : 1856808752488796695
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : MainPanel.java : 3 : 3 : 4685356991451471033
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : ToolClass.java : 3 : 3 : 1616842376237349
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : PublicInterfaces.java : 3 : 3 : 3048309506250006399
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : HashPanel.java : 3 : 3 : 6749266928102844903
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : CurrencyPanel.java : 3 : 3 : 1616842376583784
+C:\Users\Luke\Documents\GitHub\Java-Projects-Combined\src : Currencies.java : 3 : 3 : 1616842371975655

@@ -31,6 +31,7 @@ public class MainPanel extends JPanel{
 	private static String[] importedLinesArray;
 	private String importedFilePath, importedFileName;
 	private int optionChoice, algorithmChoice;
+	private static Date now = new Date();
 
 	public MainPanel() {
 		measurementPanel = new MeasurementPanel("Unit Conversion");
@@ -146,6 +147,7 @@ public class MainPanel extends JPanel{
 					ToolClass.availableCurrenciesDialog();
 				} else {
 					ToolClass.selectionCancelledDialog();
+					ToolClass.logError(now, ToolClass.ERROR.BAD, "FilePanel.java", 148, "User has cancelled file selection.");
 				}
 			}
 		});
@@ -170,9 +172,11 @@ public class MainPanel extends JPanel{
 							new AccessFile(importedFilePath, importedFileName, optionChoice, algorithmChoice);
 						} catch (IOException e1) {
 							ToolClass.exceptionIO();
+							ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MainPanel.java", 170, e1.toString());
 						}
 				} else {
 					ToolClass.selectionCancelledDialog();
+					ToolClass.logError(now, ToolClass.ERROR.BAD, "FilePanel.java", 178, "User has cancelled file selection.");
 				}
 			}
 		});
@@ -235,6 +239,7 @@ public class MainPanel extends JPanel{
 				if (importedLinesArray.length != 4) {
 					globalErrorCount++;
 					ToolClass.lineCorruptDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 242, "Unable to import line due to corruption:" + importedLinesArray.toString());
 					continue;
 				}
 
@@ -245,11 +250,13 @@ public class MainPanel extends JPanel{
 				} catch (Exception e) {
 					globalErrorCount++;
 					ToolClass.incorrectCurrencyNameDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 252, "Unable to import currency name");
 				}
 
 				if (currencyNamesArray[i].length() == 0 || currencyNamesArray[i] == null) {
 					globalErrorCount++;
 					ToolClass.incorrectCurrencyNameDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 258, "Unable to import currency name");
 					continue;
 				}
 
@@ -258,11 +265,13 @@ public class MainPanel extends JPanel{
 				} catch (Exception e) {
 					globalErrorCount++;
 					ToolClass.incorrectCurrencyDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 267,  "Unable to import currency");
 				}
 
 				if (importCurrencyArray[i].length() == 0  || importCurrencyArray[i] == null) {
 					globalErrorCount++;
 					ToolClass.incorrectCurrencyDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 273, "Unable to import currency");
 					continue;
 				}
 
@@ -271,6 +280,7 @@ public class MainPanel extends JPanel{
 				} catch (Exception e) {
 					globalErrorCount++;
 					ToolClass.incorrectFactorDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 282, "Unable to import currency factor");
 					continue;
 				}
 
@@ -279,11 +289,13 @@ public class MainPanel extends JPanel{
 				} catch (Exception e) {
 					globalErrorCount++;
 					ToolClass.incorrectSymbolDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 291, "Unable to import currency symbol");
 				}
 
 				if (importSymbolArray[i].length() == 0  || importSymbolArray[i] == null) {
 					globalErrorCount++;
 					ToolClass.incorrectSymbolDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MainPanel.java", 297, "Unable to import currency symbol");
 					continue;
 				}
 
@@ -293,8 +305,10 @@ public class MainPanel extends JPanel{
 			}
 		} catch (FileNotFoundException e) {
 			ToolClass.incorrectFilePathDialog();
+			ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MainPanel.java", 307, "Filepath provided is incorrect");
 		} catch (IOException e) {
 			ToolClass.exceptionIO();	
+			ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MainPanel.java", 310,  "Error occured when trying to access file");
 		}
 
 	}

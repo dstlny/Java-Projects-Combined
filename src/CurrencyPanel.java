@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
@@ -19,6 +20,7 @@ public class CurrencyPanel extends JPanel {
 	private String currencyTitle;
 	ActionListener convertListener = new ConvertListener();
 	ActionListener ButtonListener = new ButtonListener();
+	private static Date now = new Date();
 
 	public CurrencyPanel(String myTitle) {
 		currencyTitle = myTitle;
@@ -115,6 +117,7 @@ public class CurrencyPanel extends JPanel {
 					 * Invoke Formatexception() method from Dialog() class
 					 */
 					ToolClass.formatExceptionDialog();
+					ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "AccessFile.java", 118, "NumberFormatException raise, unable to convert passed through value \""+currencyValueToConvert+"\"");
 				}
 
 				/*

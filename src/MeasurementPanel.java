@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
@@ -33,6 +34,7 @@ public class MeasurementPanel extends JPanel {
 	ActionListener ButtonListener = new ButtonListener();
 
 	public static int globalCount = 0;
+	private static Date now = new Date();
 
 	/*
 	 * All factors used during conversion
@@ -143,6 +145,7 @@ public class MeasurementPanel extends JPanel {
 					 * 
 					 */
 					ToolClass.formatExceptionDialog();
+					ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MeasurementPanel.java", 146, exception.toString());
 					globalClearButton.doClick();
 					return;
 				}
@@ -277,6 +280,7 @@ public class MeasurementPanel extends JPanel {
 					 */
 					globalCountLabel.setText("Conversion Count: " + globalCount);
 					ToolClass.emptyTextFieldDialog();
+					ToolClass.logError(now, ToolClass.ERROR.MINOR, "MeasurementPanel.java", 281, "Empty Textfield");
 				}
 			}
 		}

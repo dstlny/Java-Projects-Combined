@@ -1,0 +1,4 @@
+<Mon Jun 10 15:57:37 BST 2019 : [ERROR_LEVEL : BAD]> @ FilePanel.java:148 : [Ljava.lang.Exception;@44a43783
+<Mon Jun 10 15:59:26 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : [Ljava.lang.Exception;@2d6eeca5
+<Mon Jun 10 15:59:26 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:282 : [Ljava.lang.Exception;@7481f217
+<Mon Jun 10 15:59:26 BST 2019 : [ERROR_LEVEL : MINOR]> @ MainPanel.java:242 : [Ljava.lang.Exception;@2ed9fe6

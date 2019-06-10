@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.*;
 import javax.swing.*;
 
 /**
@@ -21,6 +22,7 @@ public class FilePanel extends JPanel {
 	private String importedFilePath, importedFileName;
 	private JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
 	private int inspectionChoice, algorithmChoice, userFileChoice;
+	private static Date now = new Date();
 	
 	/**
 	 * FilePanel constructor
@@ -68,11 +70,12 @@ public class FilePanel extends JPanel {
 						new AccessFile(importedFilePath, importedFileName, inspectionChoice, algorithmChoice);
 					} catch (IOException e1) {
 						ToolClass.exceptionIO();
+						ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "FilePanel.java", 73, "Unable to access file \""+importedFile+"\"");
 					}
 					
 			    } else {
-			    	ToolClass.selectionCancelled();
-					Output.setFileOutput("User has cancelled file selection.");
+					ToolClass.selectionCancelled();
+					ToolClass.logError(now, ToolClass.ERROR.BAD, "FilePanel.java", 78, "User has cancelled file selection.");
 				}
 		    }
 	    });

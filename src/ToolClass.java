@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.io.*;
 import java.util.*;
 import javax.swing.*;
 
@@ -10,6 +11,7 @@ import javax.swing.*;
 public class ToolClass {
 
 	private static double result;
+	private static Date now = new Date();
 
 	public static void setResult(double setResult){
 		result = setResult;
@@ -17,6 +19,12 @@ public class ToolClass {
 
 	public static double getResult(){
 		return result;
+	}
+
+	public static enum ERROR {
+		BAD,
+		MINOR,
+		CRITICAL;
 	}
 
 	/*
@@ -150,6 +158,27 @@ public class ToolClass {
 		JOptionPane.showMessageDialog(null,
 				"File " + filename + " was not found.",
 				null, JOptionPane.WARNING_MESSAGE);
+	}
+
+	public static void logError(Date date, ERROR error, String file, int line, String error_string, Exception... reason){
+		File debug_log = new File("debug_log.txt");
+		String full_error = "";
+
+		if(reason.length < 0){
+			full_error = "<"+date+ " [ERROR_LEVEL : "+error+"]> @ " + file + ":" + line  + " : " + error_string;
+		} else{
+			full_error = "<"+date+ " : [ERROR_LEVEL : "+error+"]> @ " + file + ":" + line  + " : " + reason;
+		}
+
+		try {
+			BufferedWriter WRITE_DEBUG =  new BufferedWriter(new  FileWriter(debug_log, true));	
+			WRITE_DEBUG.write(full_error);
+			WRITE_DEBUG.newLine();
+			WRITE_DEBUG.close();
+		} catch(Exception e){
+			logError(now, ERROR.CRITICAL, "ToolClass.java", 178, e.toString());
+		}
+			
 	}
 
 }
