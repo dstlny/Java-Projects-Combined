@@ -147,7 +147,7 @@ public class MainPanel extends JPanel{
 					ToolClass.availableCurrenciesDialog();
 				} else {
 					ToolClass.selectionCancelledDialog();
-					ToolClass.logError(now, ToolClass.ERROR.BAD, "FilePanel.java", 148, "User has cancelled file selection.");
+					ToolClass.logError(now, ToolClass.ERROR.BAD, "MainPanel.java", 150, "User has cancelled file selection.");
 				}
 			}
 		});
@@ -172,11 +172,11 @@ public class MainPanel extends JPanel{
 							new AccessFile(importedFilePath, importedFileName, optionChoice, algorithmChoice);
 						} catch (IOException e1) {
 							ToolClass.exceptionIO();
-							ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MainPanel.java", 170, e1.toString());
+							ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MainPanel.java", 175, "Unable to access file");
 						}
 				} else {
 					ToolClass.selectionCancelledDialog();
-					ToolClass.logError(now, ToolClass.ERROR.BAD, "FilePanel.java", 178, "User has cancelled file selection.");
+					ToolClass.logError(now, ToolClass.ERROR.BAD, "MainPanel.java", 179, "User has cancelled file selection.");
 				}
 			}
 		});
