@@ -16,7 +16,6 @@ public class Currencies {
 
 			if (value.matches("^[a-zA-Z]*$")) {
 				currencyName[i] = value;
-				System.out.println("currencyArr[" + i + "] = " + currencyName[i]);
 				i++;
 			}
 		}
@@ -35,9 +34,7 @@ public class Currencies {
 	 */
 	public static void factor(Double...factorArr) {
 		for (Double value: factorArr) {
-
 			currencyFactor[j] = value;
-			System.out.println("factorArr[" + j + "] = " + currencyFactor[j]);
 			j++;
 		}
 	}
@@ -56,10 +53,7 @@ public class Currencies {
 	 */
 	public static void symbol(String...symbolArr) {
 		for (String value: symbolArr) {
-
 			currencySymbol[k] = value;
-
-			System.out.println("symbolArr[" + k + "] = " + currencySymbol[k]);
 			k++;
 		}
 	}

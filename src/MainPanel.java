@@ -110,6 +110,7 @@ public class MainPanel extends JPanel{
 		topMenu1Item1.setMnemonic(KeyEvent.VK_E);
 		topMenu1Item1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ToolClass.logError(now, ToolClass.ERROR.EXIT_STATUS, "MainPanel.java", 113, "User has chosen to exit the program");
 				System.exit(0);
 			}
 		});

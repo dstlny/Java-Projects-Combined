@@ -24,7 +24,8 @@ public class ToolClass {
 	public static enum ERROR {
 		BAD,
 		MINOR,
-		CRITICAL;
+		CRITICAL,
+		EXIT_STATUS;
 	}
 
 	/*
@@ -160,15 +161,9 @@ public class ToolClass {
 				null, JOptionPane.WARNING_MESSAGE);
 	}
 
-	public static void logError(Date date, ERROR error, String file, int line, String error_string, Exception... reason){
+	public static void logError(Date date, ERROR error, String file, int line, String error_string){
 		File debug_log = new File("debug_log.txt");
-		String full_error = "";
-
-		if(reason.length < 0){
-			full_error = "<"+date+ " [ERROR_LEVEL : "+error+"]> @ " + file + ":" + line  + " : " + error_string;
-		} else{
-			full_error = "<"+date+ " : [ERROR_LEVEL : "+error+"]> @ " + file + ":" + line  + " : " + reason;
-		}
+		String full_error = "<"+date+ " [ERROR_LEVEL : "+error+"]> @ " + file + ":" + line  + " : " + error_string;
 
 		try {
 			BufferedWriter WRITE_DEBUG =  new BufferedWriter(new  FileWriter(debug_log, true));	

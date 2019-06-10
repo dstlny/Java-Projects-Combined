@@ -289,6 +289,7 @@ public class CurrencyPanel extends JPanel {
 				 * Invoke emptyTextField() method from Dialog() class
 				 */
 				ToolClass.emptyTextFieldDialog();
+				ToolClass.logError(now, ToolClass.ERROR.BAD, "CurrencyPanel.java", 292, "java.lang.NumberFormatException: empty String");
 			}
 		}
 	}

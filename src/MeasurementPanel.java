@@ -145,7 +145,7 @@ public class MeasurementPanel extends JPanel {
 					 * 
 					 */
 					ToolClass.formatExceptionDialog();
-					ToolClass.logError(now, ToolClass.ERROR.CRITICAL, "MeasurementPanel.java", 146, exception.toString());
+					ToolClass.logError(now, ToolClass.ERROR.BAD, "MeasurementPanel.java", 146, exception.toString());
 					globalClearButton.doClick();
 					return;
 				}
